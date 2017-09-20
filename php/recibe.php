@@ -1,5 +1,5 @@
 <?php
-	require_once("Repaso.php");
+	require_once("../clases/Usuario.php");
 
 	$nombre = $_POST["nombre"];
 	$email = $_POST["email"];
@@ -7,11 +7,14 @@
 	$contra2 = $_POST["pass2"];
 
 	if(empty($nombre) || empty($email) || empty($contra) || empty($contra2)){
-		echo '1';
+		exit('2');
 	}else{
-		echo'2';
+		$usuario = new Usuario($nombre, $email, $contra, $contra2);
+		if(!$usuario->comprueba_mail()){
+			exit('3');
+		}else{
+			exit('1');
+		}
 	}
-
-	// $alumno = new Repaso($nombre, $email, $contra, $contra2);
 
  ?>

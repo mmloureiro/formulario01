@@ -7,13 +7,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="css/estilo.css">
   </head>
   <body>
   	<div class="container">
     	<h2>Rellena el siguiente formulario: </h2>
     	<div class="row">
-    		<div class="col-sm-6">
+    		<div class="col-sm-8">
 		    	<div class="form-group">
 					<form class="form-group" id="formu" action="repaso1.php" method="POST" accept-charset="utf-8">
 						Nombre: <input type="text" class="form-control" name="nombre">
@@ -44,11 +44,12 @@
     		$(".btn").click(function(){
 	    		$.ajax({
 	    			method: "POST",
-	    			url: "repaso1.php",
+	    			url: "php/recibe.php",
 	    			data: $("#formu").serialize(),
 	    			success: function(data){
-	    				switch (data) {
-	    					case '1':
+              switch (data) {
+                case '1':
+                  alert('hola');
 	    						$('#alerta').html("Faltan campos en el formulario").show('slow');
 	    						break;
 	    					default:

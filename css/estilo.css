@@ -1,0 +1,19 @@
+* {
+	align-content: center;
+	margin: 0 auto;
+}
+
+h2 {
+	text-align: center;
+}
+
+.container {
+	margin-top: 1em;
+	background-color: #e5e6e8;
+	border-radius: 2em;
+	box-shadow: 0.2em 0.3em grey;
+}
+
+#alerta {
+	margin-top: 1em;
+}

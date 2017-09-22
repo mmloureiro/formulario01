@@ -12,7 +12,16 @@
 		$usuario = new Usuario($nombre, $email, $contra, $contra2);
 		if(!$usuario->comprueba_mail()){
 			exit('3');
+		}elseif (!$usuario->comprueba_contra()) {
+			exit('4');
+		}elseif (!$usuario->comprueba_igual()) {
+			exit('5');
+		}elseif (!$usuario->guardar()) {
+			exit('6');
 		}else{
+			session_start();
+			$_SESSION['nombre'] = $nombre;
+			$_SESSION['email'] = $email;
 			exit('1');
 		}
 	}

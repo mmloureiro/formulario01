@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+
+session_start();
+
+if(isset($_SESSION['nombre'])){
+	echo '<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -7,29 +12,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
   </head>
   <body>
   	<div class="container">
-      <div id="formulario">
-      	<h2>Rellena el siguiente formulario: </h2>
-      	<div class="row">
-      		<div class="col-sm-8">
-  		    	<div class="form-group">
-  					<form class="form-group" id="formu" action="repaso1.php" method="POST" accept-charset="utf-8">
-  						Nombre: <input type="text" class="form-control" name="nombre">
-  						Email: <input type="texto" class="form-control" name="email">
-  						Contraseña: <input type="password" class="form-control" name="pass">
-  						Repetir contraseña: <input type="password" class="form-control" name="pass2"><br>
-  						<button type="button" class="btn btn-primary">Enviar datos</button>
-
-              <!-- alerta de errores -->
-  						<div class="hidden alert alert-danger" id="alerta" data-dismiss="alert" role="alert" ></div>
-  					  </form>
-  				  </div> <!--form-group -->
-  			  </div> <!--col-sm-8 -->
-  		  </div> <!--row -->
-      </div> <!--formulario -->
+      <div id="resultado">
+        <div class="hidden alert alert-success" data-dismiss="alert" role="alert" >Hola <b>'.$_SESSION['nombre'].'</b>, tu correo <b>'.$_SESSION['email'].'</b> ha sido registrado correctamente.</div>
+      </div>
+      <div>
+      	<a class="btn btn-secondary" href="../index.html" role="button">Volver al formulario</a>
+      </div>
   	</div> <!--container -->
     
     <!-- Optional JavaScript -->
@@ -39,4 +31,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="js/alertas.js"></script>
   </body>
-</html>
+</html>';
+}else{
+	echo 'error';
+}
+
+
+ ?>

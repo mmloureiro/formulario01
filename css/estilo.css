@@ -7,7 +7,7 @@ h2 {
 	text-align: center;
 }
 
-.container {
+#formulario {
 	margin-top: 1em;
 	background-color: #e5e6e8;
 	border-radius: 2em;
@@ -15,5 +15,9 @@ h2 {
 }
 
 #alerta {
+	margin-top: 1em;
+}
+
+#resultado {
 	margin-top: 1em;
 }

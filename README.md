@@ -1,4 +1,4 @@
-# formulario01
+# Formulario guarda en BD
 Formulario básico para guardar datos en BD
 
 En el servidor:
